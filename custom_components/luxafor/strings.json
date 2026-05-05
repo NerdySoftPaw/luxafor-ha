@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Luxafor API",
+        "description": "Enter the host and port of your Luxafor Busy Tag API.",
+        "data": {
+          "host": "Host / IP Address",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the Luxafor API. Check host and port.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This Luxafor instance is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Luxafor API Settings",
+        "data": {
+          "host": "Host / IP Address",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the Luxafor API. Check host and port.",
+      "unknown": "An unexpected error occurred."
+    }
+  }
+}

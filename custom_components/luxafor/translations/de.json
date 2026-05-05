@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Luxafor API verbinden",
+        "description": "Host und Port der Luxafor Busy Tag API eingeben.",
+        "data": {
+          "host": "Host / IP-Adresse",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Luxafor API fehlgeschlagen. Host und Port prüfen.",
+      "unknown": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "abort": {
+      "already_configured": "Diese Luxafor-Instanz ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Luxafor API Einstellungen",
+        "data": {
+          "host": "Host / IP-Adresse",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Luxafor API fehlgeschlagen. Host und Port prüfen.",
+      "unknown": "Ein unerwarteter Fehler ist aufgetreten."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+set_status:
+  name: Set Status
+  description: Set the Luxafor Busy Tag status. Available status IDs are fetched from the API.
+  fields:
+    status:
+      name: Status
+      description: The status ID to set (e.g. available, focus, meeting). Check your API's /api/statuses endpoint for valid values.
+      required: true
+      example: "available"
+      selector:
+        text: {}
+
+reconnect:
+  name: Reconnect Device
+  description: Trigger a reconnect attempt to the physical Luxafor device.
