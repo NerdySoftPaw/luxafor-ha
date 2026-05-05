@@ -16,8 +16,8 @@ jobs:
 
       - name: Create zip
         run: |
-          cd custom_components
-          zip -r ../luxafor.zip luxafor/
+          cd custom_components/luxafor
+          zip -r ../../luxafor.zip .
 
       - uses: softprops/action-gh-release@v2
         with:
