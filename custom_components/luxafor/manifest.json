@@ -1,12 +1,12 @@
 {
   "domain": "luxafor",
   "name": "Luxafor Busy Tag",
-  "version": "1.0.0",
-  "config_flow": true,
-  "iot_class": "local_push",
-  "requirements": ["python-socketio[asyncio]>=5.0.0", "aiohttp>=3.9.0"],
-  "dependencies": [],
   "codeowners": ["@NerdySoftPaw"],
+  "config_flow": true,
+  "dependencies": [],
   "documentation": "https://github.com/NerdySoftPaw/luxafor-ha",
-  "issue_tracker": "https://github.com/NerdySoftPaw/luxafor-ha/issues"
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/NerdySoftPaw/luxafor-ha/issues",
+  "requirements": ["python-socketio[asyncio]>=5.0.0", "aiohttp>=3.9.0"],
+  "version": "1.0.0"
 }
