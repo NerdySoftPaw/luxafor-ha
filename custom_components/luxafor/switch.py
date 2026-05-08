@@ -25,13 +25,14 @@ class LuxaforDevicePowerSwitch(LuxaforEntity, SwitchEntity):
 
     @property
     def is_on(self) -> bool:
-        # "on" means the device is NOT in the off state
-        return bool(self.coordinator.data and not self.coordinator.data.off)
+        if not self.coordinator.data:
+            return False
+        return not (self.coordinator.data.off or self.coordinator.data.pending_off)
 
     async def async_turn_on(self, **kwargs) -> None:
-        if self.coordinator.data and self.coordinator.data.off:
+        if self.coordinator.data and (self.coordinator.data.off or self.coordinator.data.pending_off):
             await self.coordinator.async_toggle_device()
 
     async def async_turn_off(self, **kwargs) -> None:
-        if self.coordinator.data and not self.coordinator.data.off:
+        if self.coordinator.data and not self.coordinator.data.off and not self.coordinator.data.pending_off:
             await self.coordinator.async_toggle_device()

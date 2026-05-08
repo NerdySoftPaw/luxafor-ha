@@ -1,9 +1,8 @@
 """Image entity: current Luxafor status image."""
 from __future__ import annotations
 
-from datetime import datetime
-
 from homeassistant.components.image import ImageEntity
+from homeassistant.util import dt as dt_util
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
@@ -25,7 +24,7 @@ class LuxaforStatusImage(LuxaforEntity, ImageEntity):
     def __init__(self, coordinator: LuxaforCoordinator, hass: HomeAssistant) -> None:
         LuxaforEntity.__init__(self, coordinator, "status_image")
         ImageEntity.__init__(self, hass)
-        self._last_updated: datetime = datetime.now()
+        self._last_updated = dt_util.utcnow()
         self._last_effective: str = ""
 
     @property
@@ -43,5 +42,5 @@ class LuxaforStatusImage(LuxaforEntity, ImageEntity):
             effective = self.coordinator.data.effective
             if effective != self._last_effective:
                 self._last_effective = effective
-                self._last_updated = datetime.now()
+                self._last_updated = dt_util.utcnow()
         super()._handle_coordinator_update()
